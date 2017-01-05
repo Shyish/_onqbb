@@ -34,9 +34,8 @@ GraphPathAlgorithm contract.
 Since I didn't want to reinvent the wheel by doing a custom implementation of the algorithm
 I searched and took the one stated here (but honestly the test in the article is basically
 doing nothing, so I modified it a bit on my own):
-http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
-*to respect the original source I left that class in Java, but the conversion to Kotlin
-would be pretty straightforward.
+http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html 
+*to respect the original source I left that class in Java, but the conversion to Kotlin would be pretty straightforward.
 
 I've also modified the algorithm a bit. The idea is that we want to calculate the optimal
 path between 2 conversions, so the initial approach is to make the weights of the edges
