@@ -42,15 +42,9 @@ I've also modified the algorithm a bit. The idea is that we want to calculate th
 path between 2 conversions, so the initial approach is to make the weights of the edges
 to be the conversion rate, but:
 
-    - In our case the path would be traversed by multiplying the original quantities by the
-    conversion rate, which means that we cannot just SUM the weights as done in the original
-    class, so we need to multiply them.
-    - For Dijkstra the lower the weight the better the path, but for us is the opposite:
-    the lower the conversion, the worse, so in the RatesToGraphConverter I inverted the
-    conversion rate and then instead of multiply the quantity and the distance we just
-    divide. Another option would have been to just negate the conversion rate and then
-    to a abs on the result (but I would need more time to properly benchmark the memory/cpu
-    consumption for this).
+* In our case the path would be traversed by multiplying the original quantities by the conversion rate, which means that we cannot just SUM the weights as done in the original class, so we need to multiply them.
+
+* For Dijkstra the lower the weight the better the path, but for us is the opposite: the lower the conversion, the worse, so in the RatesToGraphConverter I inverted the conversion rate and then instead of multiply the quantity and the distance we just divide. Another option would have been to just negate the conversion rate and then to a abs on the result (but I would need more time to properly benchmark the memory/cpu consumption for this).
 
 As stated in the "TODO" of the TransactionInteractor, a possible improvement would be to
 introduce a memory or disk cache so we don't have to recalculate already known paths for
